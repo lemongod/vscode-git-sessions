@@ -1,0 +1,48 @@
+{
+  "name": "vscode-git-sessions",
+  "displayName": "Git Session Manager",
+  "description": "Manages editor layout sessions per git branch",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.60.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "workspaceContains:.git"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "gitLayout.saveLayout",
+        "title": "Git Layout: Save Current Layout"
+      },
+      {
+        "command": "gitLayout.restoreLayout",
+        "title": "Git Layout: Restore Saved Layout"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "gitLayout.saveLayout",
+        "key": "ctrl+r ctrl+s",
+        "mac": "cmd+r cmd+s"
+      },
+      {
+        "command": "gitLayout.restoreLayout",
+        "key": "ctrl+r ctrl+r",
+        "mac": "cmd+r cmd+r"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "__metadata": {
+    "size": 25863131
+  }
+}
